@@ -1,5 +1,5 @@
 Classic Timing Analyzer report for DDA_algorithm
-Wed Oct 25 10:38:28 2023
+Wed Oct 25 10:57:38 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -433,7 +433,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 Info: *******************************************************************
 Info: Running Quartus II Classic Timing Analyzer
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Oct 25 10:38:28 2023
+    Info: Processing started: Wed Oct 25 10:57:38 2023
 Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off DDA_algorithm -c DDA_algorithm
 Info: Started post-fitting delay annotation
 Info: Delay annotation completed successfully
@@ -535,7 +535,7 @@ Info: th for register "acc[4]" (data pin = "N[4]", clock pin = "clk") is 1.624 n
         Info: Total interconnect delay = 5.234 ns ( 68.15 % )
 Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 11 warnings
     Info: Peak virtual memory: 189 megabytes
-    Info: Processing ended: Wed Oct 25 10:38:28 2023
+    Info: Processing ended: Wed Oct 25 10:57:38 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

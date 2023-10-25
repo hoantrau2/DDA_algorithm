@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DDA_algorithm
-Wed Oct 25 10:38:24 2023
+Wed Oct 25 10:57:35 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -42,7 +42,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                               ;
 +-----------------------------+----------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Wed Oct 25 10:38:24 2023        ;
+; Analysis & Synthesis Status ; Successful - Wed Oct 25 10:57:35 2023        ;
 ; Quartus II Version          ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name               ; DDA_algorithm                                ;
 ; Top-level Entity Name       ; DDA_algorithm                                ;
@@ -238,26 +238,26 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Oct 25 10:38:24 2023
+    Info: Processing started: Wed Oct 25 10:57:35 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DDA_algorithm -c DDA_algorithm
 Info: Found 1 design units, including 1 entities, in source file dda_algorithm.v
     Info: Found entity 1: DDA_algorithm
 Info: Elaborating entity "DDA_algorithm" for the top level hierarchy
-Warning (10855): Verilog HDL warning at DDA_algorithm.v(6): initial value for variable acc should be constant
-Warning (10230): Verilog HDL assignment warning at DDA_algorithm.v(27): truncated value with size 32 to match size of target (7)
-Warning (10235): Verilog HDL Always Construct warning at DDA_algorithm.v(47): variable "acc" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at DDA_algorithm.v(47): variable "temp" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10855): Verilog HDL warning at DDA_algorithm.v(8): initial value for variable acc should be constant
+Warning (10230): Verilog HDL assignment warning at DDA_algorithm.v(29): truncated value with size 32 to match size of target (7)
+Warning (10235): Verilog HDL Always Construct warning at DDA_algorithm.v(46): variable "acc" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DDA_algorithm.v(46): variable "temp" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at DDA_algorithm.v(47): variable "N" is read inside the Always Construct but isn't in the Always Construct's Event Control
 Warning (10235): Verilog HDL Always Construct warning at DDA_algorithm.v(48): variable "N" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10235): Verilog HDL Always Construct warning at DDA_algorithm.v(50): variable "N" is read inside the Always Construct but isn't in the Always Construct's Event Control
-Warning (10240): Verilog HDL Always Construct warning at DDA_algorithm.v(43): inferring latch(es) for variable "acc", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "acc[0]" at DDA_algorithm.v(55)
-Info (10041): Inferred latch for "acc[1]" at DDA_algorithm.v(55)
-Info (10041): Inferred latch for "acc[2]" at DDA_algorithm.v(55)
-Info (10041): Inferred latch for "acc[3]" at DDA_algorithm.v(55)
-Info (10041): Inferred latch for "acc[4]" at DDA_algorithm.v(55)
-Info (10041): Inferred latch for "acc[5]" at DDA_algorithm.v(55)
-Info (10041): Inferred latch for "acc[6]" at DDA_algorithm.v(55)
-Info (10041): Inferred latch for "acc[7]" at DDA_algorithm.v(55)
+Warning (10240): Verilog HDL Always Construct warning at DDA_algorithm.v(42): inferring latch(es) for variable "acc", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "acc[0]" at DDA_algorithm.v(53)
+Info (10041): Inferred latch for "acc[1]" at DDA_algorithm.v(53)
+Info (10041): Inferred latch for "acc[2]" at DDA_algorithm.v(53)
+Info (10041): Inferred latch for "acc[3]" at DDA_algorithm.v(53)
+Info (10041): Inferred latch for "acc[4]" at DDA_algorithm.v(53)
+Info (10041): Inferred latch for "acc[5]" at DDA_algorithm.v(53)
+Info (10041): Inferred latch for "acc[6]" at DDA_algorithm.v(53)
+Info (10041): Inferred latch for "acc[7]" at DDA_algorithm.v(53)
 Warning: Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "flag_T"
 Info: Implemented 87 device resources after synthesis - the final resource count might be different
@@ -266,7 +266,7 @@ Info: Implemented 87 device resources after synthesis - the final resource count
     Info: Implemented 65 logic cells
 Info: Quartus II Analysis & Synthesis was successful. 0 errors, 9 warnings
     Info: Peak virtual memory: 226 megabytes
-    Info: Processing ended: Wed Oct 25 10:38:24 2023
+    Info: Processing ended: Wed Oct 25 10:57:35 2023
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
