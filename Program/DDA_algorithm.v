@@ -1,0 +1,92 @@
+module DDA_algorithm(clk, WR, LS, N, Nx, Pulse, Dir, Flag_T,Flag_full,D,clk1);
+	input  clk, WR, LS;
+	input [7:0] N, Nx;
+	output Pulse, Dir;
+	reg Dir;
+	reg pinout;
+	output reg [7:0] D = 0;
+	output reg Flag_T = 0;
+	output reg Flag_full = 0;
+	output reg clk1 = 0;
+	reg [7:0] counter_clk1 = 0;
+	reg [3:0] count_T = 0;
+	reg [7:0] acc = 10;
+	reg [2:0] N_buff = 0;
+	reg [7:0] buff_1,buff_2,buff_3,buff_4 = 0;
+	reg pre_WR = 0;
+	reg pre_LS = 0;
+	reg pre_Flag_T = 0;
+	
+	always@(posedge clk) begin
+		pre_WR<=WR;
+		pre_LS <= LS;
+		pre_Flag_T <= Flag_T;
+		if (counter_clk1 <= 49)
+			counter_clk1 = counter_clk1 +1;
+		else begin
+			clk1 = ~clk1;
+			counter_clk1 = 0;
+		end
+						
+		if ({pre_LS, LS} == 2'b01) begin
+			N_buff = 0;
+			buff_1 = 0;
+			buff_2 = 0;
+			buff_3 = 0;
+			buff_4 = 0;
+			D = 0;
+		end
+		
+		if ({pre_WR,WR} == 2'b01 && LS ==0) begin
+			if (N_buff < 4)	begin
+				N_buff  = N_buff +1;
+				case(N_buff)
+					1: buff_1 = Nx;
+					2: buff_2 = Nx;
+					3: buff_3 = Nx;
+					4: buff_4 = Nx;
+				endcase
+			end
+			else begin
+				N_buff = 4;
+			end
+		end
+		
+		if (N_buff < 4) Flag_full = 0;
+				else Flag_full = 1;
+				
+		if (pre_Flag_T != Flag_T) begin
+		    if (N_buff !=0) begin
+				N_buff  = N_buff - 1;
+				D = buff_1;
+				buff_1 = buff_2;
+				buff_2 = buff_3;
+				buff_3 = buff_4;
+				buff_4 = 0;
+				Dir = D[7];
+			end	
+		else D=0;
+	    end
+	    
+	end
+	
+	always@(posedge clk1)
+		begin
+			count_T = count_T +1;
+			if (count_T == 10) begin
+				count_T  = 0;
+				Flag_T = ~Flag_T;	
+			end
+
+			acc = acc + D[6:0];
+			if (acc > N) begin
+				acc = acc - N;
+				pinout = 1;
+			end 
+			else begin
+			pinout = 0;
+			end
+		end
+    
+assign Pulse = ~clk1 & pinout;
+endmodule
