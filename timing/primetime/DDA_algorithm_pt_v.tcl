@@ -16,7 +16,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
 
-## DATE "10/25/2023 10:57:39"
+## DATE "10/31/2023 16:29:41"
 
 ## 
 ## Device: Altera EPM1270T144C5 Package TQFP144
@@ -61,13 +61,8 @@ read_sdf DDA_algorithm_v.sdo
 ## Start clock definition ##
 # WARNING:  The required clock period is not set. The default value (100 ns) is used. 
 create_clock -period 100.000 -waveform {0.000 50.000} [get_ports { clk } ] -name clk  
-# WARNING:  The required clock period is not set. The default value (100 ns) is used. 
-create_clock -period 100.000 -waveform {0.000 50.000} [get_ports { WR } ] -name WR  
 
 set_propagated_clock [all_clocks]
-set_clock_groups -asynchronous \
--group {clk} \
--group {WR}
 ## End clock definition ##
 
 ## Start create collections ##
@@ -84,8 +79,19 @@ set_clock_groups -asynchronous \
 ## End individual pin commands definition ##
 
 ## Start Output pin capacitance definition ##
+set_load -pin_load 10 [get_ports { D[0] } ]
+set_load -pin_load 10 [get_ports { D[1] } ]
+set_load -pin_load 10 [get_ports { D[2] } ]
+set_load -pin_load 10 [get_ports { D[3] } ]
+set_load -pin_load 10 [get_ports { D[4] } ]
+set_load -pin_load 10 [get_ports { D[5] } ]
+set_load -pin_load 10 [get_ports { D[6] } ]
+set_load -pin_load 10 [get_ports { D[7] } ]
 set_load -pin_load 10 [get_ports { Dir } ]
+set_load -pin_load 10 [get_ports { Flag_T } ]
+set_load -pin_load 10 [get_ports { Flag_full } ]
 set_load -pin_load 10 [get_ports { Pulse } ]
+set_load -pin_load 10 [get_ports { clk1 } ]
 ## End Output pin capacitance definition ##
 
 ## Start clock uncertainty definition ##

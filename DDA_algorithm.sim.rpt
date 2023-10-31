@@ -1,5 +1,5 @@
 Simulator report for DDA_algorithm
-Wed Oct 25 11:13:39 2023
+Tue Oct 31 16:29:50 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+---------------+
 ; Simulation Start Time       ; 0 ps          ;
 ; Simulation End Time         ; 10.0 ms       ;
-; Simulation Netlist Size     ; 87 nodes      ;
-; Simulation Coverage         ;      29.46 %  ;
-; Total Number of Transitions ; 133049        ;
+; Simulation Netlist Size     ; 179 nodes     ;
+; Simulation Coverage         ;      66.98 %  ;
+; Total Number of Transitions ; 103414        ;
 ; Simulation Breakpoints      ; 0             ;
 ; Family                      ; MAX II        ;
 ; Device                      ; EPM1270T144C5 ;
@@ -94,254 +94,327 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      29.46 % ;
-; Total nodes checked                                 ; 87           ;
-; Total output ports checked                          ; 129          ;
-; Total output ports with complete 1/0-value coverage ; 38           ;
-; Total output ports with no 1/0-value coverage       ; 84           ;
-; Total output ports with no 1-value coverage         ; 87           ;
-; Total output ports with no 0-value coverage         ; 88           ;
+; Total coverage as a percentage                      ;      66.98 % ;
+; Total nodes checked                                 ; 179          ;
+; Total output ports checked                          ; 215          ;
+; Total output ports with complete 1/0-value coverage ; 144          ;
+; Total output ports with no 1/0-value coverage       ; 71           ;
+; Total output ports with no 1-value coverage         ; 71           ;
+; Total output ports with no 0-value coverage         ; 71           ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                        ;
-+--------------------------------+--------------------------------+------------------+
-; Node Name                      ; Output Port Name               ; Output Port Type ;
-+--------------------------------+--------------------------------+------------------+
-; |DDA_algorithm|Pulse~reg0      ; |DDA_algorithm|Pulse~reg0      ; regout           ;
-; |DDA_algorithm|clk1            ; |DDA_algorithm|clk1            ; regout           ;
-; |DDA_algorithm|Add0~0          ; |DDA_algorithm|Add0~0          ; combout          ;
-; |DDA_algorithm|Add0~0          ; |DDA_algorithm|Add0~2          ; cout0            ;
-; |DDA_algorithm|Add0~0          ; |DDA_algorithm|Add0~2COUT1_44  ; cout1            ;
-; |DDA_algorithm|Add0~5          ; |DDA_algorithm|Add0~5          ; combout          ;
-; |DDA_algorithm|Add0~5          ; |DDA_algorithm|Add0~7          ; cout0            ;
-; |DDA_algorithm|Add0~5          ; |DDA_algorithm|Add0~7COUT1_42  ; cout1            ;
-; |DDA_algorithm|Add0~10         ; |DDA_algorithm|Add0~10         ; combout          ;
-; |DDA_algorithm|Add0~10         ; |DDA_algorithm|Add0~12         ; cout0            ;
-; |DDA_algorithm|Add0~10         ; |DDA_algorithm|Add0~12COUT1_46 ; cout1            ;
-; |DDA_algorithm|Add0~15         ; |DDA_algorithm|Add0~15         ; combout          ;
-; |DDA_algorithm|Add0~15         ; |DDA_algorithm|Add0~17         ; cout             ;
-; |DDA_algorithm|Equal0~0        ; |DDA_algorithm|Equal0~0        ; combout          ;
-; |DDA_algorithm|Add0~20         ; |DDA_algorithm|Add0~20         ; combout          ;
-; |DDA_algorithm|Add0~20         ; |DDA_algorithm|Add0~22         ; cout0            ;
-; |DDA_algorithm|Add0~25         ; |DDA_algorithm|Add0~25         ; combout          ;
-; |DDA_algorithm|Add0~25         ; |DDA_algorithm|Add0~27         ; cout0            ;
-; |DDA_algorithm|Add0~30         ; |DDA_algorithm|Add0~30         ; combout          ;
-; |DDA_algorithm|Equal0~1        ; |DDA_algorithm|Equal0~1        ; combout          ;
-; |DDA_algorithm|counter_clk1[1] ; |DDA_algorithm|counter_clk1[1] ; regout           ;
-; |DDA_algorithm|counter_clk1[0] ; |DDA_algorithm|counter_clk1[0] ; regout           ;
-; |DDA_algorithm|counter_clk1[2] ; |DDA_algorithm|counter_clk1[2] ; regout           ;
-; |DDA_algorithm|counter_clk1[3] ; |DDA_algorithm|counter_clk1[3] ; regout           ;
-; |DDA_algorithm|counter_clk1[4] ; |DDA_algorithm|counter_clk1[4] ; regout           ;
-; |DDA_algorithm|counter_clk1[5] ; |DDA_algorithm|counter_clk1[5] ; regout           ;
-; |DDA_algorithm|temp[2]         ; |DDA_algorithm|temp[2]         ; regout           ;
-; |DDA_algorithm|temp[1]         ; |DDA_algorithm|temp[1]         ; regout           ;
-; |DDA_algorithm|Nx[7]           ; |DDA_algorithm|Nx[7]~corein    ; combout          ;
-; |DDA_algorithm|LS              ; |DDA_algorithm|LS~corein       ; combout          ;
-; |DDA_algorithm|clk             ; |DDA_algorithm|clk~corein      ; combout          ;
-; |DDA_algorithm|WR              ; |DDA_algorithm|WR~corein       ; combout          ;
-; |DDA_algorithm|Nx[3]           ; |DDA_algorithm|Nx[3]~corein    ; combout          ;
-; |DDA_algorithm|Nx[2]           ; |DDA_algorithm|Nx[2]~corein    ; combout          ;
-; |DDA_algorithm|Nx[1]           ; |DDA_algorithm|Nx[1]~corein    ; combout          ;
-; |DDA_algorithm|Nx[0]           ; |DDA_algorithm|Nx[0]~corein    ; combout          ;
-; |DDA_algorithm|Pulse           ; |DDA_algorithm|Pulse           ; padio            ;
-; |DDA_algorithm|Dir             ; |DDA_algorithm|Dir             ; padio            ;
-+--------------------------------+--------------------------------+------------------+
++-----------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                   ;
++--------------------------------+-------------------------------------------+------------------+
+; Node Name                      ; Output Port Name                          ; Output Port Type ;
++--------------------------------+-------------------------------------------+------------------+
+; |DDA_algorithm|pinout          ; |DDA_algorithm|Pulse~0                    ; combout          ;
+; |DDA_algorithm|D[0]~reg0       ; |DDA_algorithm|D[0]~reg0                  ; regout           ;
+; |DDA_algorithm|D[1]~reg0       ; |DDA_algorithm|D[1]~reg0                  ; regout           ;
+; |DDA_algorithm|D[2]~reg0       ; |DDA_algorithm|D[2]~reg0                  ; regout           ;
+; |DDA_algorithm|D[3]~reg0       ; |DDA_algorithm|D[3]~reg0                  ; regout           ;
+; |DDA_algorithm|D[7]~reg0       ; |DDA_algorithm|D[7]~reg0                  ; regout           ;
+; |DDA_algorithm|LessThan4~0     ; |DDA_algorithm|LessThan4~0                ; combout          ;
+; |DDA_algorithm|counter_clk1[5] ; |DDA_algorithm|counter_clk1[5]~5COUT1_32  ; cout1            ;
+; |DDA_algorithm|counter_clk1[4] ; |DDA_algorithm|counter_clk1[4]~7          ; cout             ;
+; |DDA_algorithm|counter_clk1[1] ; |DDA_algorithm|counter_clk1[1]~9          ; cout0            ;
+; |DDA_algorithm|counter_clk1[1] ; |DDA_algorithm|counter_clk1[1]~9COUT1_26  ; cout1            ;
+; |DDA_algorithm|counter_clk1[2] ; |DDA_algorithm|counter_clk1[2]~11         ; cout0            ;
+; |DDA_algorithm|counter_clk1[2] ; |DDA_algorithm|counter_clk1[2]~11COUT1_28 ; cout1            ;
+; |DDA_algorithm|counter_clk1[3] ; |DDA_algorithm|counter_clk1[3]~13         ; cout0            ;
+; |DDA_algorithm|counter_clk1[3] ; |DDA_algorithm|counter_clk1[3]~13COUT1_30 ; cout1            ;
+; |DDA_algorithm|LessThan0~0     ; |DDA_algorithm|LessThan0~0                ; combout          ;
+; |DDA_algorithm|LessThan0~1     ; |DDA_algorithm|LessThan0~1                ; combout          ;
+; |DDA_algorithm|buff_1[7]       ; |DDA_algorithm|buff_1[7]                  ; regout           ;
+; |DDA_algorithm|pre_WR          ; |DDA_algorithm|always0~0                  ; combout          ;
+; |DDA_algorithm|pre_WR          ; |DDA_algorithm|pre_WR                     ; regout           ;
+; |DDA_algorithm|N_buff[2]       ; |DDA_algorithm|N_buff[2]                  ; regout           ;
+; |DDA_algorithm|N_buff[1]       ; |DDA_algorithm|N_buff[1]                  ; regout           ;
+; |DDA_algorithm|N_buff[0]       ; |DDA_algorithm|N_buff[0]                  ; regout           ;
+; |DDA_algorithm|Decoder0~0      ; |DDA_algorithm|Decoder0~0                 ; combout          ;
+; |DDA_algorithm|D~0             ; |DDA_algorithm|D~0                        ; combout          ;
+; |DDA_algorithm|pre_Flag_T      ; |DDA_algorithm|always0~1                  ; combout          ;
+; |DDA_algorithm|pre_Flag_T      ; |DDA_algorithm|pre_Flag_T                 ; regout           ;
+; |DDA_algorithm|N_buff~4        ; |DDA_algorithm|N_buff~4                   ; combout          ;
+; |DDA_algorithm|Flag_full~reg0  ; |DDA_algorithm|N_buff~5                   ; combout          ;
+; |DDA_algorithm|Flag_full~reg0  ; |DDA_algorithm|Flag_full~reg0             ; regout           ;
+; |DDA_algorithm|Dir~0           ; |DDA_algorithm|Dir~0                      ; combout          ;
+; |DDA_algorithm|Dir~1           ; |DDA_algorithm|Dir~1                      ; combout          ;
+; |DDA_algorithm|count_T[2]      ; |DDA_algorithm|count_T[2]                 ; regout           ;
+; |DDA_algorithm|count_T[1]      ; |DDA_algorithm|count_T[1]                 ; regout           ;
+; |DDA_algorithm|Equal2~0        ; |DDA_algorithm|Equal2~0                   ; combout          ;
+; |DDA_algorithm|buff_1[0]       ; |DDA_algorithm|buff_1[0]                  ; regout           ;
+; |DDA_algorithm|D~1             ; |DDA_algorithm|D~1                        ; combout          ;
+; |DDA_algorithm|D[1]~3          ; |DDA_algorithm|D[1]~3                     ; combout          ;
+; |DDA_algorithm|buff_1[1]       ; |DDA_algorithm|buff_1[1]                  ; regout           ;
+; |DDA_algorithm|D~4             ; |DDA_algorithm|D~4                        ; combout          ;
+; |DDA_algorithm|buff_1[2]       ; |DDA_algorithm|buff_1[2]                  ; regout           ;
+; |DDA_algorithm|D~6             ; |DDA_algorithm|D~6                        ; combout          ;
+; |DDA_algorithm|buff_1[3]       ; |DDA_algorithm|buff_1[3]                  ; regout           ;
+; |DDA_algorithm|D~8             ; |DDA_algorithm|D~8                        ; combout          ;
+; |DDA_algorithm|counter_clk1[0] ; |DDA_algorithm|counter_clk1[0]~15         ; cout0            ;
+; |DDA_algorithm|counter_clk1[0] ; |DDA_algorithm|counter_clk1[0]~15COUT1_24 ; cout1            ;
+; |DDA_algorithm|buff_2[7]       ; |DDA_algorithm|buff_2[7]                  ; regout           ;
+; |DDA_algorithm|buff_1~2        ; |DDA_algorithm|buff_1~2                   ; combout          ;
+; |DDA_algorithm|Decoder0~1      ; |DDA_algorithm|Decoder0~1                 ; combout          ;
+; |DDA_algorithm|buff_1~3        ; |DDA_algorithm|buff_1~3                   ; combout          ;
+; |DDA_algorithm|N_buff~6        ; |DDA_algorithm|N_buff~6                   ; combout          ;
+; |DDA_algorithm|N_buff~7        ; |DDA_algorithm|N_buff~7                   ; combout          ;
+; |DDA_algorithm|N_buff~8        ; |DDA_algorithm|N_buff~8                   ; combout          ;
+; |DDA_algorithm|buff_2[0]       ; |DDA_algorithm|buff_2[0]                  ; regout           ;
+; |DDA_algorithm|buff_1~5        ; |DDA_algorithm|buff_1~5                   ; combout          ;
+; |DDA_algorithm|buff_2[1]       ; |DDA_algorithm|buff_2[1]                  ; regout           ;
+; |DDA_algorithm|buff_1~7        ; |DDA_algorithm|buff_1~7                   ; combout          ;
+; |DDA_algorithm|buff_2[2]       ; |DDA_algorithm|buff_2[2]                  ; regout           ;
+; |DDA_algorithm|buff_1~9        ; |DDA_algorithm|buff_1~9                   ; combout          ;
+; |DDA_algorithm|buff_2[3]       ; |DDA_algorithm|buff_2[3]                  ; regout           ;
+; |DDA_algorithm|buff_1~11       ; |DDA_algorithm|buff_1~11                  ; combout          ;
+; |DDA_algorithm|buff_3[7]       ; |DDA_algorithm|buff_3[7]                  ; regout           ;
+; |DDA_algorithm|buff_2~0        ; |DDA_algorithm|buff_2~0                   ; combout          ;
+; |DDA_algorithm|Decoder0~2      ; |DDA_algorithm|Decoder0~2                 ; combout          ;
+; |DDA_algorithm|buff_2~1        ; |DDA_algorithm|buff_2~1                   ; combout          ;
+; |DDA_algorithm|buff_3[0]       ; |DDA_algorithm|buff_3[0]                  ; regout           ;
+; |DDA_algorithm|buff_2~3        ; |DDA_algorithm|buff_2~3                   ; combout          ;
+; |DDA_algorithm|buff_3[1]       ; |DDA_algorithm|buff_3[1]                  ; regout           ;
+; |DDA_algorithm|buff_2~5        ; |DDA_algorithm|buff_2~5                   ; combout          ;
+; |DDA_algorithm|buff_3[2]       ; |DDA_algorithm|buff_3[2]                  ; regout           ;
+; |DDA_algorithm|buff_2~7        ; |DDA_algorithm|buff_2~7                   ; combout          ;
+; |DDA_algorithm|buff_3[3]       ; |DDA_algorithm|buff_3[3]                  ; regout           ;
+; |DDA_algorithm|buff_2~9        ; |DDA_algorithm|buff_2~9                   ; combout          ;
+; |DDA_algorithm|Add5~0          ; |DDA_algorithm|Add5~0                     ; combout          ;
+; |DDA_algorithm|LessThan4~17    ; |DDA_algorithm|LessThan4~17               ; cout             ;
+; |DDA_algorithm|buff_4[7]       ; |DDA_algorithm|buff_4[7]                  ; regout           ;
+; |DDA_algorithm|buff_3~0        ; |DDA_algorithm|buff_3~0                   ; combout          ;
+; |DDA_algorithm|Decoder0~3      ; |DDA_algorithm|Decoder0~3                 ; combout          ;
+; |DDA_algorithm|buff_3~1        ; |DDA_algorithm|buff_3~1                   ; combout          ;
+; |DDA_algorithm|buff_3~3        ; |DDA_algorithm|buff_3~3                   ; combout          ;
+; |DDA_algorithm|buff_4[1]       ; |DDA_algorithm|buff_4[1]                  ; regout           ;
+; |DDA_algorithm|buff_3~5        ; |DDA_algorithm|buff_3~5                   ; combout          ;
+; |DDA_algorithm|buff_3~7        ; |DDA_algorithm|buff_3~7                   ; combout          ;
+; |DDA_algorithm|buff_4[3]       ; |DDA_algorithm|buff_4[3]                  ; regout           ;
+; |DDA_algorithm|buff_3~9        ; |DDA_algorithm|buff_3~9                   ; combout          ;
+; |DDA_algorithm|Add5~6          ; |DDA_algorithm|Add5~6                     ; combout          ;
+; |DDA_algorithm|Add4~15         ; |DDA_algorithm|Add4~15                    ; combout          ;
+; |DDA_algorithm|LessThan4~22    ; |DDA_algorithm|LessThan4~22               ; cout0            ;
+; |DDA_algorithm|LessThan4~22    ; |DDA_algorithm|LessThan4~22COUT1_54       ; cout1            ;
+; |DDA_algorithm|buff_4~1        ; |DDA_algorithm|buff_4~1                   ; combout          ;
+; |DDA_algorithm|Add5~12         ; |DDA_algorithm|Add5~12                    ; combout          ;
+; |DDA_algorithm|Add4~20         ; |DDA_algorithm|Add4~20                    ; combout          ;
+; |DDA_algorithm|Add4~20         ; |DDA_algorithm|Add4~22                    ; cout0            ;
+; |DDA_algorithm|Add4~20         ; |DDA_algorithm|Add4~22COUT1_54            ; cout1            ;
+; |DDA_algorithm|LessThan4~27    ; |DDA_algorithm|LessThan4~27               ; cout0            ;
+; |DDA_algorithm|LessThan4~27    ; |DDA_algorithm|LessThan4~27COUT1_52       ; cout1            ;
+; |DDA_algorithm|Add5~18         ; |DDA_algorithm|Add5~18                    ; combout          ;
+; |DDA_algorithm|Add5~18         ; |DDA_algorithm|Add5~20                    ; cout             ;
+; |DDA_algorithm|acc[3]          ; |DDA_algorithm|acc[3]                     ; regout           ;
+; |DDA_algorithm|Add4~25         ; |DDA_algorithm|Add4~25                    ; combout          ;
+; |DDA_algorithm|Add4~25         ; |DDA_algorithm|Add4~27                    ; cout0            ;
+; |DDA_algorithm|Add4~25         ; |DDA_algorithm|Add4~27COUT1_52            ; cout1            ;
+; |DDA_algorithm|LessThan4~32    ; |DDA_algorithm|LessThan4~32               ; cout0            ;
+; |DDA_algorithm|LessThan4~32    ; |DDA_algorithm|LessThan4~32COUT1_50       ; cout1            ;
+; |DDA_algorithm|Add5~24         ; |DDA_algorithm|Add5~24                    ; combout          ;
+; |DDA_algorithm|Add5~24         ; |DDA_algorithm|Add5~26                    ; cout0            ;
+; |DDA_algorithm|Add5~24         ; |DDA_algorithm|Add5~26COUT1_62            ; cout1            ;
+; |DDA_algorithm|acc[2]          ; |DDA_algorithm|acc[2]                     ; regout           ;
+; |DDA_algorithm|Add4~30         ; |DDA_algorithm|Add4~30                    ; combout          ;
+; |DDA_algorithm|Add4~30         ; |DDA_algorithm|Add4~32                    ; cout0            ;
+; |DDA_algorithm|Add4~30         ; |DDA_algorithm|Add4~32COUT1_50            ; cout1            ;
+; |DDA_algorithm|LessThan4~37    ; |DDA_algorithm|LessThan4~37               ; cout0            ;
+; |DDA_algorithm|LessThan4~37    ; |DDA_algorithm|LessThan4~37COUT1_48       ; cout1            ;
+; |DDA_algorithm|Add5~30         ; |DDA_algorithm|Add5~30                    ; combout          ;
+; |DDA_algorithm|Add5~30         ; |DDA_algorithm|Add5~32                    ; cout0            ;
+; |DDA_algorithm|Add5~30         ; |DDA_algorithm|Add5~32COUT1_60            ; cout1            ;
+; |DDA_algorithm|acc[1]          ; |DDA_algorithm|acc[1]                     ; regout           ;
+; |DDA_algorithm|Add4~35         ; |DDA_algorithm|Add4~35                    ; combout          ;
+; |DDA_algorithm|Add4~35         ; |DDA_algorithm|Add4~37                    ; cout0            ;
+; |DDA_algorithm|Add4~35         ; |DDA_algorithm|Add4~37COUT1_48            ; cout1            ;
+; |DDA_algorithm|Add5~36         ; |DDA_algorithm|Add5~36                    ; combout          ;
+; |DDA_algorithm|Add5~36         ; |DDA_algorithm|Add5~38                    ; cout0            ;
+; |DDA_algorithm|Add5~36         ; |DDA_algorithm|Add5~38COUT1_58            ; cout1            ;
+; |DDA_algorithm|acc[0]          ; |DDA_algorithm|acc[0]                     ; regout           ;
+; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~42                    ; combout          ;
+; |DDA_algorithm|buff_1~19       ; |DDA_algorithm|buff_1~19                  ; combout          ;
+; |DDA_algorithm|N_buff~11       ; |DDA_algorithm|N_buff~11                  ; combout          ;
+; |DDA_algorithm|clk             ; |DDA_algorithm|clk~corein                 ; combout          ;
+; |DDA_algorithm|Nx[7]           ; |DDA_algorithm|Nx[7]~corein               ; combout          ;
+; |DDA_algorithm|WR              ; |DDA_algorithm|WR~corein                  ; combout          ;
+; |DDA_algorithm|Nx[0]           ; |DDA_algorithm|Nx[0]~corein               ; combout          ;
+; |DDA_algorithm|Nx[1]           ; |DDA_algorithm|Nx[1]~corein               ; combout          ;
+; |DDA_algorithm|Nx[2]           ; |DDA_algorithm|Nx[2]~corein               ; combout          ;
+; |DDA_algorithm|Nx[3]           ; |DDA_algorithm|Nx[3]~corein               ; combout          ;
+; |DDA_algorithm|Pulse           ; |DDA_algorithm|Pulse                      ; padio            ;
+; |DDA_algorithm|Dir             ; |DDA_algorithm|Dir                        ; padio            ;
+; |DDA_algorithm|Flag_T          ; |DDA_algorithm|Flag_T                     ; padio            ;
+; |DDA_algorithm|Flag_full       ; |DDA_algorithm|Flag_full                  ; padio            ;
+; |DDA_algorithm|D[0]            ; |DDA_algorithm|D[0]                       ; padio            ;
+; |DDA_algorithm|D[1]            ; |DDA_algorithm|D[1]                       ; padio            ;
+; |DDA_algorithm|D[2]            ; |DDA_algorithm|D[2]                       ; padio            ;
+; |DDA_algorithm|D[3]            ; |DDA_algorithm|D[3]                       ; padio            ;
+; |DDA_algorithm|D[7]            ; |DDA_algorithm|D[7]                       ; padio            ;
+; |DDA_algorithm|clk1            ; |DDA_algorithm|clk1                       ; padio            ;
++--------------------------------+-------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+-----------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                ;
-+--------------------------------+-------------------------------------+------------------+
-; Node Name                      ; Output Port Name                    ; Output Port Type ;
-+--------------------------------+-------------------------------------+------------------+
-; |DDA_algorithm|LessThan0~0     ; |DDA_algorithm|LessThan0~0          ; combout          ;
-; |DDA_algorithm|Add0~20         ; |DDA_algorithm|Add0~22COUT1_48      ; cout1            ;
-; |DDA_algorithm|Add0~25         ; |DDA_algorithm|Add0~27COUT1_50      ; cout1            ;
-; |DDA_algorithm|Add1~0          ; |DDA_algorithm|Add1~0               ; combout          ;
-; |DDA_algorithm|LessThan0~7     ; |DDA_algorithm|LessThan0~7          ; cout0            ;
-; |DDA_algorithm|LessThan0~7     ; |DDA_algorithm|LessThan0~7COUT1_58  ; cout1            ;
-; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]      ; regout           ;
-; |DDA_algorithm|Add1~5          ; |DDA_algorithm|Add1~5               ; combout          ;
-; |DDA_algorithm|Add1~5          ; |DDA_algorithm|Add1~7               ; cout0            ;
-; |DDA_algorithm|Add1~5          ; |DDA_algorithm|Add1~7COUT1_58       ; cout1            ;
-; |DDA_algorithm|LessThan0~12    ; |DDA_algorithm|LessThan0~12         ; cout0            ;
-; |DDA_algorithm|LessThan0~12    ; |DDA_algorithm|LessThan0~12COUT1_56 ; cout1            ;
-; |DDA_algorithm|Add2~0          ; |DDA_algorithm|Add2~0               ; combout          ;
-; |DDA_algorithm|Add2~5          ; |DDA_algorithm|Add2~5               ; combout          ;
-; |DDA_algorithm|temp[6]         ; |DDA_algorithm|temp[6]              ; regout           ;
-; |DDA_algorithm|Add1~10         ; |DDA_algorithm|Add1~10              ; combout          ;
-; |DDA_algorithm|Add1~10         ; |DDA_algorithm|Add1~12              ; cout0            ;
-; |DDA_algorithm|Add1~10         ; |DDA_algorithm|Add1~12COUT1_56      ; cout1            ;
-; |DDA_algorithm|LessThan0~17    ; |DDA_algorithm|LessThan0~17         ; cout             ;
-; |DDA_algorithm|Add2~6          ; |DDA_algorithm|Add2~6               ; combout          ;
-; |DDA_algorithm|Add2~6          ; |DDA_algorithm|Add2~8               ; cout0            ;
-; |DDA_algorithm|Add2~6          ; |DDA_algorithm|Add2~8COUT1_66       ; cout1            ;
-; |DDA_algorithm|Add2~11         ; |DDA_algorithm|Add2~11              ; combout          ;
-; |DDA_algorithm|temp[5]         ; |DDA_algorithm|temp[5]              ; regout           ;
-; |DDA_algorithm|Add1~15         ; |DDA_algorithm|Add1~15              ; combout          ;
-; |DDA_algorithm|Add1~15         ; |DDA_algorithm|Add1~17              ; cout             ;
-; |DDA_algorithm|LessThan0~22    ; |DDA_algorithm|LessThan0~22         ; cout0            ;
-; |DDA_algorithm|LessThan0~22    ; |DDA_algorithm|LessThan0~22COUT1_54 ; cout1            ;
-; |DDA_algorithm|Add2~12         ; |DDA_algorithm|Add2~12              ; combout          ;
-; |DDA_algorithm|Add2~12         ; |DDA_algorithm|Add2~14              ; cout0            ;
-; |DDA_algorithm|Add2~12         ; |DDA_algorithm|Add2~14COUT1_64      ; cout1            ;
-; |DDA_algorithm|Add2~17         ; |DDA_algorithm|Add2~17              ; combout          ;
-; |DDA_algorithm|temp[4]         ; |DDA_algorithm|temp[4]              ; regout           ;
-; |DDA_algorithm|Add1~20         ; |DDA_algorithm|Add1~20              ; combout          ;
-; |DDA_algorithm|LessThan0~27    ; |DDA_algorithm|LessThan0~27         ; cout0            ;
-; |DDA_algorithm|LessThan0~27    ; |DDA_algorithm|LessThan0~27COUT1_52 ; cout1            ;
-; |DDA_algorithm|Add2~18         ; |DDA_algorithm|Add2~18              ; combout          ;
-; |DDA_algorithm|Add2~18         ; |DDA_algorithm|Add2~20              ; cout             ;
-; |DDA_algorithm|Add2~23         ; |DDA_algorithm|Add2~23              ; combout          ;
-; |DDA_algorithm|temp[3]         ; |DDA_algorithm|temp[3]              ; regout           ;
-; |DDA_algorithm|Add1~25         ; |DDA_algorithm|Add1~25              ; combout          ;
-; |DDA_algorithm|Add1~25         ; |DDA_algorithm|Add1~27              ; cout0            ;
-; |DDA_algorithm|Add1~25         ; |DDA_algorithm|Add1~27COUT1_52      ; cout1            ;
-; |DDA_algorithm|LessThan0~32    ; |DDA_algorithm|LessThan0~32         ; cout0            ;
-; |DDA_algorithm|LessThan0~32    ; |DDA_algorithm|LessThan0~32COUT1_50 ; cout1            ;
-; |DDA_algorithm|Add2~24         ; |DDA_algorithm|Add2~24              ; combout          ;
-; |DDA_algorithm|Add2~24         ; |DDA_algorithm|Add2~26              ; cout0            ;
-; |DDA_algorithm|Add2~24         ; |DDA_algorithm|Add2~26COUT1_62      ; cout1            ;
-; |DDA_algorithm|Add2~29         ; |DDA_algorithm|Add2~29              ; combout          ;
-; |DDA_algorithm|Add1~30         ; |DDA_algorithm|Add1~30              ; combout          ;
-; |DDA_algorithm|LessThan0~37    ; |DDA_algorithm|LessThan0~37         ; cout0            ;
-; |DDA_algorithm|LessThan0~37    ; |DDA_algorithm|LessThan0~37COUT1_48 ; cout1            ;
-; |DDA_algorithm|Add2~30         ; |DDA_algorithm|Add2~30              ; combout          ;
-; |DDA_algorithm|Add2~30         ; |DDA_algorithm|Add2~32              ; cout0            ;
-; |DDA_algorithm|Add2~30         ; |DDA_algorithm|Add2~32COUT1_60      ; cout1            ;
-; |DDA_algorithm|Add2~35         ; |DDA_algorithm|Add2~35              ; combout          ;
-; |DDA_algorithm|Add1~35         ; |DDA_algorithm|Add1~35              ; combout          ;
-; |DDA_algorithm|Add1~35         ; |DDA_algorithm|Add1~37              ; cout0            ;
-; |DDA_algorithm|Add1~35         ; |DDA_algorithm|Add1~37COUT1_48      ; cout1            ;
-; |DDA_algorithm|Add2~36         ; |DDA_algorithm|Add2~36              ; combout          ;
-; |DDA_algorithm|Add2~36         ; |DDA_algorithm|Add2~38              ; cout0            ;
-; |DDA_algorithm|Add2~36         ; |DDA_algorithm|Add2~38COUT1_58      ; cout1            ;
-; |DDA_algorithm|Add2~41         ; |DDA_algorithm|Add2~41              ; combout          ;
-; |DDA_algorithm|temp[0]         ; |DDA_algorithm|temp[0]              ; regout           ;
-; |DDA_algorithm|Add2~42         ; |DDA_algorithm|Add2~42              ; combout          ;
-; |DDA_algorithm|Add2~42         ; |DDA_algorithm|Add2~44              ; cout0            ;
-; |DDA_algorithm|Add2~42         ; |DDA_algorithm|Add2~44COUT1_56      ; cout1            ;
-; |DDA_algorithm|Add2~47         ; |DDA_algorithm|Add2~47              ; combout          ;
-; |DDA_algorithm|acc[7]          ; |DDA_algorithm|acc[7]               ; combout          ;
-; |DDA_algorithm|acc[6]          ; |DDA_algorithm|acc[6]               ; combout          ;
-; |DDA_algorithm|acc[5]          ; |DDA_algorithm|acc[5]               ; combout          ;
-; |DDA_algorithm|acc[4]          ; |DDA_algorithm|acc[4]               ; combout          ;
-; |DDA_algorithm|acc[3]          ; |DDA_algorithm|acc[3]               ; combout          ;
-; |DDA_algorithm|acc[2]          ; |DDA_algorithm|acc[2]               ; combout          ;
-; |DDA_algorithm|acc[1]          ; |DDA_algorithm|acc[1]               ; combout          ;
-; |DDA_algorithm|acc[0]          ; |DDA_algorithm|acc[0]               ; combout          ;
-; |DDA_algorithm|N[7]            ; |DDA_algorithm|N[7]~corein          ; combout          ;
-; |DDA_algorithm|N[6]            ; |DDA_algorithm|N[6]~corein          ; combout          ;
-; |DDA_algorithm|N[5]            ; |DDA_algorithm|N[5]~corein          ; combout          ;
-; |DDA_algorithm|Nx[6]           ; |DDA_algorithm|Nx[6]~corein         ; combout          ;
-; |DDA_algorithm|N[4]            ; |DDA_algorithm|N[4]~corein          ; combout          ;
-; |DDA_algorithm|Nx[5]           ; |DDA_algorithm|Nx[5]~corein         ; combout          ;
-; |DDA_algorithm|N[3]            ; |DDA_algorithm|N[3]~corein          ; combout          ;
-; |DDA_algorithm|Nx[4]           ; |DDA_algorithm|Nx[4]~corein         ; combout          ;
-; |DDA_algorithm|N[2]            ; |DDA_algorithm|N[2]~corein          ; combout          ;
-; |DDA_algorithm|N[1]            ; |DDA_algorithm|N[1]~corein          ; combout          ;
-; |DDA_algorithm|N[0]            ; |DDA_algorithm|N[0]~corein          ; combout          ;
-+--------------------------------+-------------------------------------+------------------+
++----------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                     ;
++--------------------------------+------------------------------------------+------------------+
+; Node Name                      ; Output Port Name                         ; Output Port Type ;
++--------------------------------+------------------------------------------+------------------+
+; |DDA_algorithm|D[4]~reg0       ; |DDA_algorithm|D[4]~reg0                 ; regout           ;
+; |DDA_algorithm|D[5]~reg0       ; |DDA_algorithm|D[5]~reg0                 ; regout           ;
+; |DDA_algorithm|D[6]~reg0       ; |DDA_algorithm|D[6]~reg0                 ; regout           ;
+; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1         ; cout0            ;
+; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1COUT1_34 ; cout1            ;
+; |DDA_algorithm|counter_clk1[5] ; |DDA_algorithm|counter_clk1[5]~5         ; cout0            ;
+; |DDA_algorithm|pre_LS          ; |DDA_algorithm|Equal0~0                  ; combout          ;
+; |DDA_algorithm|pre_LS          ; |DDA_algorithm|pre_LS                    ; regout           ;
+; |DDA_algorithm|buff_1[4]       ; |DDA_algorithm|buff_1[4]                 ; regout           ;
+; |DDA_algorithm|D~10            ; |DDA_algorithm|D~10                      ; combout          ;
+; |DDA_algorithm|buff_1[5]       ; |DDA_algorithm|buff_1[5]                 ; regout           ;
+; |DDA_algorithm|D~12            ; |DDA_algorithm|D~12                      ; combout          ;
+; |DDA_algorithm|buff_1[6]       ; |DDA_algorithm|buff_1[6]                 ; regout           ;
+; |DDA_algorithm|D~14            ; |DDA_algorithm|D~14                      ; combout          ;
+; |DDA_algorithm|Add4~0          ; |DDA_algorithm|Add4~0                    ; combout          ;
+; |DDA_algorithm|LessThan4~7     ; |DDA_algorithm|LessThan4~7               ; cout0            ;
+; |DDA_algorithm|LessThan4~7     ; |DDA_algorithm|LessThan4~7COUT1_58       ; cout1            ;
+; |DDA_algorithm|buff_2[4]       ; |DDA_algorithm|buff_2[4]                 ; regout           ;
+; |DDA_algorithm|buff_1~13       ; |DDA_algorithm|buff_1~13                 ; combout          ;
+; |DDA_algorithm|buff_2[5]       ; |DDA_algorithm|buff_2[5]                 ; regout           ;
+; |DDA_algorithm|buff_1~15       ; |DDA_algorithm|buff_1~15                 ; combout          ;
+; |DDA_algorithm|buff_2[6]       ; |DDA_algorithm|buff_2[6]                 ; regout           ;
+; |DDA_algorithm|buff_1~17       ; |DDA_algorithm|buff_1~17                 ; combout          ;
+; |DDA_algorithm|acc[7]          ; |DDA_algorithm|acc[7]                    ; regout           ;
+; |DDA_algorithm|Add4~5          ; |DDA_algorithm|Add4~5                    ; combout          ;
+; |DDA_algorithm|Add4~5          ; |DDA_algorithm|Add4~7                    ; cout0            ;
+; |DDA_algorithm|Add4~5          ; |DDA_algorithm|Add4~7COUT1_58            ; cout1            ;
+; |DDA_algorithm|LessThan4~12    ; |DDA_algorithm|LessThan4~12              ; cout0            ;
+; |DDA_algorithm|LessThan4~12    ; |DDA_algorithm|LessThan4~12COUT1_56      ; cout1            ;
+; |DDA_algorithm|buff_3[4]       ; |DDA_algorithm|buff_3[4]                 ; regout           ;
+; |DDA_algorithm|buff_2~11       ; |DDA_algorithm|buff_2~11                 ; combout          ;
+; |DDA_algorithm|buff_3[5]       ; |DDA_algorithm|buff_3[5]                 ; regout           ;
+; |DDA_algorithm|buff_2~13       ; |DDA_algorithm|buff_2~13                 ; combout          ;
+; |DDA_algorithm|buff_3[6]       ; |DDA_algorithm|buff_3[6]                 ; regout           ;
+; |DDA_algorithm|buff_2~15       ; |DDA_algorithm|buff_2~15                 ; combout          ;
+; |DDA_algorithm|acc[6]          ; |DDA_algorithm|acc[6]                    ; regout           ;
+; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~10                   ; combout          ;
+; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12                   ; cout0            ;
+; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12COUT1_56           ; cout1            ;
+; |DDA_algorithm|buff_4[0]       ; |DDA_algorithm|buff_4[0]                 ; regout           ;
+; |DDA_algorithm|buff_4[2]       ; |DDA_algorithm|buff_4[2]                 ; regout           ;
+; |DDA_algorithm|buff_4[4]       ; |DDA_algorithm|buff_4[4]                 ; regout           ;
+; |DDA_algorithm|buff_3~11       ; |DDA_algorithm|buff_3~11                 ; combout          ;
+; |DDA_algorithm|buff_4[5]       ; |DDA_algorithm|buff_4[5]                 ; regout           ;
+; |DDA_algorithm|buff_3~13       ; |DDA_algorithm|buff_3~13                 ; combout          ;
+; |DDA_algorithm|buff_4[6]       ; |DDA_algorithm|buff_4[6]                 ; regout           ;
+; |DDA_algorithm|buff_3~15       ; |DDA_algorithm|buff_3~15                 ; combout          ;
+; |DDA_algorithm|Add5~6          ; |DDA_algorithm|Add5~8                    ; cout0            ;
+; |DDA_algorithm|Add5~6          ; |DDA_algorithm|Add5~8COUT1_66            ; cout1            ;
+; |DDA_algorithm|acc[5]          ; |DDA_algorithm|acc[5]                    ; regout           ;
+; |DDA_algorithm|Add4~15         ; |DDA_algorithm|Add4~17                   ; cout             ;
+; |DDA_algorithm|Add5~12         ; |DDA_algorithm|Add5~14                   ; cout0            ;
+; |DDA_algorithm|Add5~12         ; |DDA_algorithm|Add5~14COUT1_64           ; cout1            ;
+; |DDA_algorithm|acc[4]          ; |DDA_algorithm|acc[4]                    ; regout           ;
+; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44                   ; cout0            ;
+; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44COUT1_56           ; cout1            ;
+; |DDA_algorithm|LS              ; |DDA_algorithm|LS~corein                 ; combout          ;
+; |DDA_algorithm|Nx[4]           ; |DDA_algorithm|Nx[4]~corein              ; combout          ;
+; |DDA_algorithm|Nx[5]           ; |DDA_algorithm|Nx[5]~corein              ; combout          ;
+; |DDA_algorithm|Nx[6]           ; |DDA_algorithm|Nx[6]~corein              ; combout          ;
+; |DDA_algorithm|N[7]            ; |DDA_algorithm|N[7]~corein               ; combout          ;
+; |DDA_algorithm|N[6]            ; |DDA_algorithm|N[6]~corein               ; combout          ;
+; |DDA_algorithm|N[5]            ; |DDA_algorithm|N[5]~corein               ; combout          ;
+; |DDA_algorithm|N[4]            ; |DDA_algorithm|N[4]~corein               ; combout          ;
+; |DDA_algorithm|N[3]            ; |DDA_algorithm|N[3]~corein               ; combout          ;
+; |DDA_algorithm|N[2]            ; |DDA_algorithm|N[2]~corein               ; combout          ;
+; |DDA_algorithm|N[1]            ; |DDA_algorithm|N[1]~corein               ; combout          ;
+; |DDA_algorithm|N[0]            ; |DDA_algorithm|N[0]~corein               ; combout          ;
+; |DDA_algorithm|D[4]            ; |DDA_algorithm|D[4]                      ; padio            ;
+; |DDA_algorithm|D[5]            ; |DDA_algorithm|D[5]                      ; padio            ;
+; |DDA_algorithm|D[6]            ; |DDA_algorithm|D[6]                      ; padio            ;
++--------------------------------+------------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+-----------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                ;
-+--------------------------------+-------------------------------------+------------------+
-; Node Name                      ; Output Port Name                    ; Output Port Type ;
-+--------------------------------+-------------------------------------+------------------+
-; |DDA_algorithm|LessThan0~0     ; |DDA_algorithm|LessThan0~0          ; combout          ;
-; |DDA_algorithm|Add0~20         ; |DDA_algorithm|Add0~22COUT1_48      ; cout1            ;
-; |DDA_algorithm|Add0~25         ; |DDA_algorithm|Add0~27COUT1_50      ; cout1            ;
-; |DDA_algorithm|Add1~0          ; |DDA_algorithm|Add1~0               ; combout          ;
-; |DDA_algorithm|LessThan0~7     ; |DDA_algorithm|LessThan0~7          ; cout0            ;
-; |DDA_algorithm|LessThan0~7     ; |DDA_algorithm|LessThan0~7COUT1_58  ; cout1            ;
-; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]      ; regout           ;
-; |DDA_algorithm|Add1~5          ; |DDA_algorithm|Add1~5               ; combout          ;
-; |DDA_algorithm|Add1~5          ; |DDA_algorithm|Add1~7               ; cout0            ;
-; |DDA_algorithm|Add1~5          ; |DDA_algorithm|Add1~7COUT1_58       ; cout1            ;
-; |DDA_algorithm|LessThan0~12    ; |DDA_algorithm|LessThan0~12         ; cout0            ;
-; |DDA_algorithm|LessThan0~12    ; |DDA_algorithm|LessThan0~12COUT1_56 ; cout1            ;
-; |DDA_algorithm|Add2~0          ; |DDA_algorithm|Add2~0               ; combout          ;
-; |DDA_algorithm|Add2~5          ; |DDA_algorithm|Add2~5               ; combout          ;
-; |DDA_algorithm|temp[6]         ; |DDA_algorithm|temp[6]              ; regout           ;
-; |DDA_algorithm|Add1~10         ; |DDA_algorithm|Add1~10              ; combout          ;
-; |DDA_algorithm|Add1~10         ; |DDA_algorithm|Add1~12              ; cout0            ;
-; |DDA_algorithm|Add1~10         ; |DDA_algorithm|Add1~12COUT1_56      ; cout1            ;
-; |DDA_algorithm|LessThan0~17    ; |DDA_algorithm|LessThan0~17         ; cout             ;
-; |DDA_algorithm|Add2~6          ; |DDA_algorithm|Add2~6               ; combout          ;
-; |DDA_algorithm|Add2~6          ; |DDA_algorithm|Add2~8               ; cout0            ;
-; |DDA_algorithm|Add2~6          ; |DDA_algorithm|Add2~8COUT1_66       ; cout1            ;
-; |DDA_algorithm|Add2~11         ; |DDA_algorithm|Add2~11              ; combout          ;
-; |DDA_algorithm|temp[5]         ; |DDA_algorithm|temp[5]              ; regout           ;
-; |DDA_algorithm|Add1~15         ; |DDA_algorithm|Add1~15              ; combout          ;
-; |DDA_algorithm|LessThan0~22    ; |DDA_algorithm|LessThan0~22         ; cout0            ;
-; |DDA_algorithm|LessThan0~22    ; |DDA_algorithm|LessThan0~22COUT1_54 ; cout1            ;
-; |DDA_algorithm|Add2~12         ; |DDA_algorithm|Add2~12              ; combout          ;
-; |DDA_algorithm|Add2~12         ; |DDA_algorithm|Add2~14              ; cout0            ;
-; |DDA_algorithm|Add2~12         ; |DDA_algorithm|Add2~14COUT1_64      ; cout1            ;
-; |DDA_algorithm|Add2~17         ; |DDA_algorithm|Add2~17              ; combout          ;
-; |DDA_algorithm|temp[4]         ; |DDA_algorithm|temp[4]              ; regout           ;
-; |DDA_algorithm|Add1~20         ; |DDA_algorithm|Add1~20              ; combout          ;
-; |DDA_algorithm|Add1~20         ; |DDA_algorithm|Add1~22              ; cout0            ;
-; |DDA_algorithm|Add1~20         ; |DDA_algorithm|Add1~22COUT1_54      ; cout1            ;
-; |DDA_algorithm|LessThan0~27    ; |DDA_algorithm|LessThan0~27         ; cout0            ;
-; |DDA_algorithm|LessThan0~27    ; |DDA_algorithm|LessThan0~27COUT1_52 ; cout1            ;
-; |DDA_algorithm|Add2~18         ; |DDA_algorithm|Add2~18              ; combout          ;
-; |DDA_algorithm|Add2~18         ; |DDA_algorithm|Add2~20              ; cout             ;
-; |DDA_algorithm|Add2~23         ; |DDA_algorithm|Add2~23              ; combout          ;
-; |DDA_algorithm|temp[3]         ; |DDA_algorithm|temp[3]              ; regout           ;
-; |DDA_algorithm|Add1~25         ; |DDA_algorithm|Add1~25              ; combout          ;
-; |DDA_algorithm|LessThan0~32    ; |DDA_algorithm|LessThan0~32         ; cout0            ;
-; |DDA_algorithm|LessThan0~32    ; |DDA_algorithm|LessThan0~32COUT1_50 ; cout1            ;
-; |DDA_algorithm|Add2~24         ; |DDA_algorithm|Add2~24              ; combout          ;
-; |DDA_algorithm|Add2~24         ; |DDA_algorithm|Add2~26              ; cout0            ;
-; |DDA_algorithm|Add2~24         ; |DDA_algorithm|Add2~26COUT1_62      ; cout1            ;
-; |DDA_algorithm|Add2~29         ; |DDA_algorithm|Add2~29              ; combout          ;
-; |DDA_algorithm|Add1~30         ; |DDA_algorithm|Add1~30              ; combout          ;
-; |DDA_algorithm|Add1~30         ; |DDA_algorithm|Add1~32              ; cout0            ;
-; |DDA_algorithm|Add1~30         ; |DDA_algorithm|Add1~32COUT1_50      ; cout1            ;
-; |DDA_algorithm|LessThan0~37    ; |DDA_algorithm|LessThan0~37         ; cout0            ;
-; |DDA_algorithm|LessThan0~37    ; |DDA_algorithm|LessThan0~37COUT1_48 ; cout1            ;
-; |DDA_algorithm|Add2~30         ; |DDA_algorithm|Add2~30              ; combout          ;
-; |DDA_algorithm|Add2~30         ; |DDA_algorithm|Add2~32              ; cout0            ;
-; |DDA_algorithm|Add2~30         ; |DDA_algorithm|Add2~32COUT1_60      ; cout1            ;
-; |DDA_algorithm|Add2~35         ; |DDA_algorithm|Add2~35              ; combout          ;
-; |DDA_algorithm|Add1~35         ; |DDA_algorithm|Add1~35              ; combout          ;
-; |DDA_algorithm|Add1~35         ; |DDA_algorithm|Add1~37              ; cout0            ;
-; |DDA_algorithm|Add1~35         ; |DDA_algorithm|Add1~37COUT1_48      ; cout1            ;
-; |DDA_algorithm|Add2~36         ; |DDA_algorithm|Add2~36              ; combout          ;
-; |DDA_algorithm|Add2~36         ; |DDA_algorithm|Add2~38              ; cout0            ;
-; |DDA_algorithm|Add2~36         ; |DDA_algorithm|Add2~38COUT1_58      ; cout1            ;
-; |DDA_algorithm|Add2~41         ; |DDA_algorithm|Add2~41              ; combout          ;
-; |DDA_algorithm|temp[0]         ; |DDA_algorithm|temp[0]              ; regout           ;
-; |DDA_algorithm|Add2~42         ; |DDA_algorithm|Add2~42              ; combout          ;
-; |DDA_algorithm|Add2~42         ; |DDA_algorithm|Add2~44              ; cout0            ;
-; |DDA_algorithm|Add2~42         ; |DDA_algorithm|Add2~44COUT1_56      ; cout1            ;
-; |DDA_algorithm|Add2~47         ; |DDA_algorithm|Add2~47              ; combout          ;
-; |DDA_algorithm|acc[7]          ; |DDA_algorithm|acc[7]               ; combout          ;
-; |DDA_algorithm|acc[6]          ; |DDA_algorithm|acc[6]               ; combout          ;
-; |DDA_algorithm|acc[5]          ; |DDA_algorithm|acc[5]               ; combout          ;
-; |DDA_algorithm|acc[4]          ; |DDA_algorithm|acc[4]               ; combout          ;
-; |DDA_algorithm|acc[3]          ; |DDA_algorithm|acc[3]               ; combout          ;
-; |DDA_algorithm|acc[2]          ; |DDA_algorithm|acc[2]               ; combout          ;
-; |DDA_algorithm|acc[1]          ; |DDA_algorithm|acc[1]               ; combout          ;
-; |DDA_algorithm|acc[0]          ; |DDA_algorithm|acc[0]               ; combout          ;
-; |DDA_algorithm|N[7]            ; |DDA_algorithm|N[7]~corein          ; combout          ;
-; |DDA_algorithm|N[6]            ; |DDA_algorithm|N[6]~corein          ; combout          ;
-; |DDA_algorithm|N[5]            ; |DDA_algorithm|N[5]~corein          ; combout          ;
-; |DDA_algorithm|Nx[6]           ; |DDA_algorithm|Nx[6]~corein         ; combout          ;
-; |DDA_algorithm|N[4]            ; |DDA_algorithm|N[4]~corein          ; combout          ;
-; |DDA_algorithm|Nx[5]           ; |DDA_algorithm|Nx[5]~corein         ; combout          ;
-; |DDA_algorithm|N[3]            ; |DDA_algorithm|N[3]~corein          ; combout          ;
-; |DDA_algorithm|Nx[4]           ; |DDA_algorithm|Nx[4]~corein         ; combout          ;
-; |DDA_algorithm|N[2]            ; |DDA_algorithm|N[2]~corein          ; combout          ;
-; |DDA_algorithm|N[1]            ; |DDA_algorithm|N[1]~corein          ; combout          ;
-; |DDA_algorithm|N[0]            ; |DDA_algorithm|N[0]~corein          ; combout          ;
-+--------------------------------+-------------------------------------+------------------+
++----------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                     ;
++--------------------------------+------------------------------------------+------------------+
+; Node Name                      ; Output Port Name                         ; Output Port Type ;
++--------------------------------+------------------------------------------+------------------+
+; |DDA_algorithm|D[4]~reg0       ; |DDA_algorithm|D[4]~reg0                 ; regout           ;
+; |DDA_algorithm|D[5]~reg0       ; |DDA_algorithm|D[5]~reg0                 ; regout           ;
+; |DDA_algorithm|D[6]~reg0       ; |DDA_algorithm|D[6]~reg0                 ; regout           ;
+; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1         ; cout0            ;
+; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1COUT1_34 ; cout1            ;
+; |DDA_algorithm|counter_clk1[5] ; |DDA_algorithm|counter_clk1[5]~5         ; cout0            ;
+; |DDA_algorithm|pre_LS          ; |DDA_algorithm|Equal0~0                  ; combout          ;
+; |DDA_algorithm|pre_LS          ; |DDA_algorithm|pre_LS                    ; regout           ;
+; |DDA_algorithm|buff_1[4]       ; |DDA_algorithm|buff_1[4]                 ; regout           ;
+; |DDA_algorithm|D~10            ; |DDA_algorithm|D~10                      ; combout          ;
+; |DDA_algorithm|buff_1[5]       ; |DDA_algorithm|buff_1[5]                 ; regout           ;
+; |DDA_algorithm|D~12            ; |DDA_algorithm|D~12                      ; combout          ;
+; |DDA_algorithm|buff_1[6]       ; |DDA_algorithm|buff_1[6]                 ; regout           ;
+; |DDA_algorithm|D~14            ; |DDA_algorithm|D~14                      ; combout          ;
+; |DDA_algorithm|Add4~0          ; |DDA_algorithm|Add4~0                    ; combout          ;
+; |DDA_algorithm|LessThan4~7     ; |DDA_algorithm|LessThan4~7               ; cout0            ;
+; |DDA_algorithm|LessThan4~7     ; |DDA_algorithm|LessThan4~7COUT1_58       ; cout1            ;
+; |DDA_algorithm|buff_2[4]       ; |DDA_algorithm|buff_2[4]                 ; regout           ;
+; |DDA_algorithm|buff_1~13       ; |DDA_algorithm|buff_1~13                 ; combout          ;
+; |DDA_algorithm|buff_2[5]       ; |DDA_algorithm|buff_2[5]                 ; regout           ;
+; |DDA_algorithm|buff_1~15       ; |DDA_algorithm|buff_1~15                 ; combout          ;
+; |DDA_algorithm|buff_2[6]       ; |DDA_algorithm|buff_2[6]                 ; regout           ;
+; |DDA_algorithm|buff_1~17       ; |DDA_algorithm|buff_1~17                 ; combout          ;
+; |DDA_algorithm|acc[7]          ; |DDA_algorithm|acc[7]                    ; regout           ;
+; |DDA_algorithm|Add4~5          ; |DDA_algorithm|Add4~5                    ; combout          ;
+; |DDA_algorithm|Add4~5          ; |DDA_algorithm|Add4~7                    ; cout0            ;
+; |DDA_algorithm|Add4~5          ; |DDA_algorithm|Add4~7COUT1_58            ; cout1            ;
+; |DDA_algorithm|LessThan4~12    ; |DDA_algorithm|LessThan4~12              ; cout0            ;
+; |DDA_algorithm|LessThan4~12    ; |DDA_algorithm|LessThan4~12COUT1_56      ; cout1            ;
+; |DDA_algorithm|buff_3[4]       ; |DDA_algorithm|buff_3[4]                 ; regout           ;
+; |DDA_algorithm|buff_2~11       ; |DDA_algorithm|buff_2~11                 ; combout          ;
+; |DDA_algorithm|buff_3[5]       ; |DDA_algorithm|buff_3[5]                 ; regout           ;
+; |DDA_algorithm|buff_2~13       ; |DDA_algorithm|buff_2~13                 ; combout          ;
+; |DDA_algorithm|buff_3[6]       ; |DDA_algorithm|buff_3[6]                 ; regout           ;
+; |DDA_algorithm|buff_2~15       ; |DDA_algorithm|buff_2~15                 ; combout          ;
+; |DDA_algorithm|acc[6]          ; |DDA_algorithm|acc[6]                    ; regout           ;
+; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~10                   ; combout          ;
+; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12                   ; cout0            ;
+; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12COUT1_56           ; cout1            ;
+; |DDA_algorithm|buff_4[0]       ; |DDA_algorithm|buff_4[0]                 ; regout           ;
+; |DDA_algorithm|buff_4[2]       ; |DDA_algorithm|buff_4[2]                 ; regout           ;
+; |DDA_algorithm|buff_4[4]       ; |DDA_algorithm|buff_4[4]                 ; regout           ;
+; |DDA_algorithm|buff_3~11       ; |DDA_algorithm|buff_3~11                 ; combout          ;
+; |DDA_algorithm|buff_4[5]       ; |DDA_algorithm|buff_4[5]                 ; regout           ;
+; |DDA_algorithm|buff_3~13       ; |DDA_algorithm|buff_3~13                 ; combout          ;
+; |DDA_algorithm|buff_4[6]       ; |DDA_algorithm|buff_4[6]                 ; regout           ;
+; |DDA_algorithm|buff_3~15       ; |DDA_algorithm|buff_3~15                 ; combout          ;
+; |DDA_algorithm|Add5~6          ; |DDA_algorithm|Add5~8                    ; cout0            ;
+; |DDA_algorithm|Add5~6          ; |DDA_algorithm|Add5~8COUT1_66            ; cout1            ;
+; |DDA_algorithm|acc[5]          ; |DDA_algorithm|acc[5]                    ; regout           ;
+; |DDA_algorithm|Add4~15         ; |DDA_algorithm|Add4~17                   ; cout             ;
+; |DDA_algorithm|Add5~12         ; |DDA_algorithm|Add5~14                   ; cout0            ;
+; |DDA_algorithm|Add5~12         ; |DDA_algorithm|Add5~14COUT1_64           ; cout1            ;
+; |DDA_algorithm|acc[4]          ; |DDA_algorithm|acc[4]                    ; regout           ;
+; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44                   ; cout0            ;
+; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44COUT1_56           ; cout1            ;
+; |DDA_algorithm|LS              ; |DDA_algorithm|LS~corein                 ; combout          ;
+; |DDA_algorithm|Nx[4]           ; |DDA_algorithm|Nx[4]~corein              ; combout          ;
+; |DDA_algorithm|Nx[5]           ; |DDA_algorithm|Nx[5]~corein              ; combout          ;
+; |DDA_algorithm|Nx[6]           ; |DDA_algorithm|Nx[6]~corein              ; combout          ;
+; |DDA_algorithm|N[7]            ; |DDA_algorithm|N[7]~corein               ; combout          ;
+; |DDA_algorithm|N[6]            ; |DDA_algorithm|N[6]~corein               ; combout          ;
+; |DDA_algorithm|N[5]            ; |DDA_algorithm|N[5]~corein               ; combout          ;
+; |DDA_algorithm|N[4]            ; |DDA_algorithm|N[4]~corein               ; combout          ;
+; |DDA_algorithm|N[3]            ; |DDA_algorithm|N[3]~corein               ; combout          ;
+; |DDA_algorithm|N[2]            ; |DDA_algorithm|N[2]~corein               ; combout          ;
+; |DDA_algorithm|N[1]            ; |DDA_algorithm|N[1]~corein               ; combout          ;
+; |DDA_algorithm|N[0]            ; |DDA_algorithm|N[0]~corein               ; combout          ;
+; |DDA_algorithm|D[4]            ; |DDA_algorithm|D[4]                      ; padio            ;
+; |DDA_algorithm|D[5]            ; |DDA_algorithm|D[5]                      ; padio            ;
+; |DDA_algorithm|D[6]            ; |DDA_algorithm|D[6]                      ; padio            ;
++--------------------------------+------------------------------------------+------------------+
 
 
 +---------------------+
@@ -357,18 +430,21 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Wed Oct 25 11:13:38 2023
+    Info: Processing started: Tue Oct 31 16:29:50 2023
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off DDA_algorithm -c DDA_algorithm
 Info: Using vector source file "E:/HK7/He_thong_dk_nhung/DDA_algorithm/DDA_algorithm.vwf"
+Info: Inverted registers were found during simulation
+    Info: Register: |DDA_algorithm|acc[3]
+    Info: Register: |DDA_algorithm|acc[1]
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      29.46 %
-Info: Number of transitions in simulation is 133049
+Info: Simulation coverage is      66.98 %
+Info: Number of transitions in simulation is 103414
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 159 megabytes
-    Info: Processing ended: Wed Oct 25 11:13:39 2023
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 160 megabytes
+    Info: Processing ended: Tue Oct 31 16:29:50 2023
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
