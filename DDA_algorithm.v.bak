@@ -76,8 +76,7 @@ always@(posedge clk1)
 			count_T  = 0;
 			Flag_T = ~Flag_T;	
 		end
-		
-		if (N_buff>=1) begin
+
 			acc = acc + D[6:0];
 			if (acc > N) begin
 				acc = acc - N;
@@ -85,10 +84,9 @@ always@(posedge clk1)
 			end 
 		    else begin
 		     pinout = 0;end
-		end
+
 		
-		else begin
-     pinout =0; end
+
     end
 assign Pulse = clk1 & pinout;
 endmodule

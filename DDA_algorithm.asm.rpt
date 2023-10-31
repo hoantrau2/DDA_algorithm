@@ -1,5 +1,5 @@
 Assembler report for DDA_algorithm
-Tue Oct 31 16:29:40 2023
+Tue Oct 31 16:38:17 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Tue Oct 31 16:29:39 2023 ;
+; Assembler Status      ; Successful - Tue Oct 31 16:38:17 2023 ;
 ; Revision Name         ; DDA_algorithm                         ;
 ; Top-level Entity Name ; DDA_algorithm                         ;
 ; Family                ; MAX II                                ;
@@ -91,7 +91,7 @@ applicable agreement for further details.
 +----------------+-------------------------------------------------------------------+
 ; Device         ; EPM1270T144C5                                                     ;
 ; JTAG usercode  ; 0xFFFFFFFF                                                        ;
-; Checksum       ; 0x00614148                                                        ;
+; Checksum       ; 0x006149F3                                                        ;
 +----------------+-------------------------------------------------------------------+
 
 
@@ -101,14 +101,14 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II Assembler
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Oct 31 16:29:39 2023
+    Info: Processing started: Tue Oct 31 16:38:17 2023
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off DDA_algorithm -c DDA_algorithm
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 204 megabytes
-    Info: Processing ended: Tue Oct 31 16:29:40 2023
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Tue Oct 31 16:38:17 2023
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 

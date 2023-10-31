@@ -234,11 +234,11 @@ VECTOR("E:/HK7/He_thong_dk_nhung/DDA_algorithm/DDA_algorithm.vwf")
 VECTOR("E:/HK7/He_thong_dk_nhung/DDA_algorithm/db/DDA_algorithm.sim.cvwf")
 {
 	ZOOM{
-		ZBEGIN = 0;
-		ZEND = 6039021687;
+		ZBEGIN = 569620253;
+		ZEND = 6608641940;
 		NUMERATOR = 852;
 		DENOMINATOR = 4900234741;
-		TOP_INDEX = 19;
+		TOP_INDEX = 3;
 	}
 	CLOCK{
 		PERIOD = 10000;

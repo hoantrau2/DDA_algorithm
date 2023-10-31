@@ -16,7 +16,7 @@
 ## PROGRAM "Quartus II"
 ## VERSION "Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition"
 
-## DATE "10/31/2023 16:29:41"
+## DATE "10/31/2023 16:38:19"
 
 ## 
 ## Device: Altera EPM1270T144C5 Package TQFP144

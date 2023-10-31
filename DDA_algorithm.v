@@ -88,5 +88,5 @@ always@(posedge clk1)
 		
 
     end
-assign Pulse = clk1 & pinout;
+assign Pulse = ~clk1 & pinout;
 endmodule

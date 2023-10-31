@@ -1,5 +1,5 @@
 Simulator report for DDA_algorithm
-Tue Oct 31 16:29:50 2023
+Tue Oct 31 16:45:30 2023
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -46,8 +46,8 @@ applicable agreement for further details.
 ; Simulation Start Time       ; 0 ps          ;
 ; Simulation End Time         ; 10.0 ms       ;
 ; Simulation Netlist Size     ; 179 nodes     ;
-; Simulation Coverage         ;      66.98 %  ;
-; Total Number of Transitions ; 103414        ;
+; Simulation Coverage         ;      69.30 %  ;
+; Total Number of Transitions ; 101019        ;
 ; Simulation Breakpoints      ; 0             ;
 ; Family                      ; MAX II        ;
 ; Device                      ; EPM1270T144C5 ;
@@ -94,13 +94,13 @@ Please use Quartus II to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      66.98 % ;
+; Total coverage as a percentage                      ;      69.30 % ;
 ; Total nodes checked                                 ; 179          ;
 ; Total output ports checked                          ; 215          ;
-; Total output ports with complete 1/0-value coverage ; 144          ;
-; Total output ports with no 1/0-value coverage       ; 71           ;
-; Total output ports with no 1-value coverage         ; 71           ;
-; Total output ports with no 0-value coverage         ; 71           ;
+; Total output ports with complete 1/0-value coverage ; 149          ;
+; Total output ports with no 1/0-value coverage       ; 66           ;
+; Total output ports with no 1-value coverage         ; 66           ;
+; Total output ports with no 0-value coverage         ; 66           ;
 +-----------------------------------------------------+--------------+
 
 
@@ -127,6 +127,8 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |DDA_algorithm|counter_clk1[3] ; |DDA_algorithm|counter_clk1[3]~13COUT1_30 ; cout1            ;
 ; |DDA_algorithm|LessThan0~0     ; |DDA_algorithm|LessThan0~0                ; combout          ;
 ; |DDA_algorithm|LessThan0~1     ; |DDA_algorithm|LessThan0~1                ; combout          ;
+; |DDA_algorithm|pre_LS          ; |DDA_algorithm|Equal0~0                   ; combout          ;
+; |DDA_algorithm|pre_LS          ; |DDA_algorithm|pre_LS                     ; regout           ;
 ; |DDA_algorithm|buff_1[7]       ; |DDA_algorithm|buff_1[7]                  ; regout           ;
 ; |DDA_algorithm|pre_WR          ; |DDA_algorithm|always0~0                  ; combout          ;
 ; |DDA_algorithm|pre_WR          ; |DDA_algorithm|pre_WR                     ; regout           ;
@@ -189,9 +191,11 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |DDA_algorithm|buff_3~0        ; |DDA_algorithm|buff_3~0                   ; combout          ;
 ; |DDA_algorithm|Decoder0~3      ; |DDA_algorithm|Decoder0~3                 ; combout          ;
 ; |DDA_algorithm|buff_3~1        ; |DDA_algorithm|buff_3~1                   ; combout          ;
+; |DDA_algorithm|buff_4[0]       ; |DDA_algorithm|buff_4[0]                  ; regout           ;
 ; |DDA_algorithm|buff_3~3        ; |DDA_algorithm|buff_3~3                   ; combout          ;
 ; |DDA_algorithm|buff_4[1]       ; |DDA_algorithm|buff_4[1]                  ; regout           ;
 ; |DDA_algorithm|buff_3~5        ; |DDA_algorithm|buff_3~5                   ; combout          ;
+; |DDA_algorithm|buff_4[2]       ; |DDA_algorithm|buff_4[2]                  ; regout           ;
 ; |DDA_algorithm|buff_3~7        ; |DDA_algorithm|buff_3~7                   ; combout          ;
 ; |DDA_algorithm|buff_4[3]       ; |DDA_algorithm|buff_4[3]                  ; regout           ;
 ; |DDA_algorithm|buff_3~9        ; |DDA_algorithm|buff_3~9                   ; combout          ;
@@ -238,6 +242,7 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |DDA_algorithm|buff_1~19       ; |DDA_algorithm|buff_1~19                  ; combout          ;
 ; |DDA_algorithm|N_buff~11       ; |DDA_algorithm|N_buff~11                  ; combout          ;
 ; |DDA_algorithm|clk             ; |DDA_algorithm|clk~corein                 ; combout          ;
+; |DDA_algorithm|LS              ; |DDA_algorithm|LS~corein                  ; combout          ;
 ; |DDA_algorithm|Nx[7]           ; |DDA_algorithm|Nx[7]~corein               ; combout          ;
 ; |DDA_algorithm|WR              ; |DDA_algorithm|WR~corein                  ; combout          ;
 ; |DDA_algorithm|Nx[0]           ; |DDA_algorithm|Nx[0]~corein               ; combout          ;
@@ -269,8 +274,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1         ; cout0            ;
 ; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1COUT1_34 ; cout1            ;
 ; |DDA_algorithm|counter_clk1[5] ; |DDA_algorithm|counter_clk1[5]~5         ; cout0            ;
-; |DDA_algorithm|pre_LS          ; |DDA_algorithm|Equal0~0                  ; combout          ;
-; |DDA_algorithm|pre_LS          ; |DDA_algorithm|pre_LS                    ; regout           ;
 ; |DDA_algorithm|buff_1[4]       ; |DDA_algorithm|buff_1[4]                 ; regout           ;
 ; |DDA_algorithm|D~10            ; |DDA_algorithm|D~10                      ; combout          ;
 ; |DDA_algorithm|buff_1[5]       ; |DDA_algorithm|buff_1[5]                 ; regout           ;
@@ -302,8 +305,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~10                   ; combout          ;
 ; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12                   ; cout0            ;
 ; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12COUT1_56           ; cout1            ;
-; |DDA_algorithm|buff_4[0]       ; |DDA_algorithm|buff_4[0]                 ; regout           ;
-; |DDA_algorithm|buff_4[2]       ; |DDA_algorithm|buff_4[2]                 ; regout           ;
 ; |DDA_algorithm|buff_4[4]       ; |DDA_algorithm|buff_4[4]                 ; regout           ;
 ; |DDA_algorithm|buff_3~11       ; |DDA_algorithm|buff_3~11                 ; combout          ;
 ; |DDA_algorithm|buff_4[5]       ; |DDA_algorithm|buff_4[5]                 ; regout           ;
@@ -319,7 +320,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |DDA_algorithm|acc[4]          ; |DDA_algorithm|acc[4]                    ; regout           ;
 ; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44                   ; cout0            ;
 ; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44COUT1_56           ; cout1            ;
-; |DDA_algorithm|LS              ; |DDA_algorithm|LS~corein                 ; combout          ;
 ; |DDA_algorithm|Nx[4]           ; |DDA_algorithm|Nx[4]~corein              ; combout          ;
 ; |DDA_algorithm|Nx[5]           ; |DDA_algorithm|Nx[5]~corein              ; combout          ;
 ; |DDA_algorithm|Nx[6]           ; |DDA_algorithm|Nx[6]~corein              ; combout          ;
@@ -349,8 +349,6 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1         ; cout0            ;
 ; |DDA_algorithm|counter_clk1[6] ; |DDA_algorithm|counter_clk1[6]~1COUT1_34 ; cout1            ;
 ; |DDA_algorithm|counter_clk1[5] ; |DDA_algorithm|counter_clk1[5]~5         ; cout0            ;
-; |DDA_algorithm|pre_LS          ; |DDA_algorithm|Equal0~0                  ; combout          ;
-; |DDA_algorithm|pre_LS          ; |DDA_algorithm|pre_LS                    ; regout           ;
 ; |DDA_algorithm|buff_1[4]       ; |DDA_algorithm|buff_1[4]                 ; regout           ;
 ; |DDA_algorithm|D~10            ; |DDA_algorithm|D~10                      ; combout          ;
 ; |DDA_algorithm|buff_1[5]       ; |DDA_algorithm|buff_1[5]                 ; regout           ;
@@ -382,8 +380,6 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~10                   ; combout          ;
 ; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12                   ; cout0            ;
 ; |DDA_algorithm|Add4~10         ; |DDA_algorithm|Add4~12COUT1_56           ; cout1            ;
-; |DDA_algorithm|buff_4[0]       ; |DDA_algorithm|buff_4[0]                 ; regout           ;
-; |DDA_algorithm|buff_4[2]       ; |DDA_algorithm|buff_4[2]                 ; regout           ;
 ; |DDA_algorithm|buff_4[4]       ; |DDA_algorithm|buff_4[4]                 ; regout           ;
 ; |DDA_algorithm|buff_3~11       ; |DDA_algorithm|buff_3~11                 ; combout          ;
 ; |DDA_algorithm|buff_4[5]       ; |DDA_algorithm|buff_4[5]                 ; regout           ;
@@ -399,7 +395,6 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |DDA_algorithm|acc[4]          ; |DDA_algorithm|acc[4]                    ; regout           ;
 ; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44                   ; cout0            ;
 ; |DDA_algorithm|Add5~42         ; |DDA_algorithm|Add5~44COUT1_56           ; cout1            ;
-; |DDA_algorithm|LS              ; |DDA_algorithm|LS~corein                 ; combout          ;
 ; |DDA_algorithm|Nx[4]           ; |DDA_algorithm|Nx[4]~corein              ; combout          ;
 ; |DDA_algorithm|Nx[5]           ; |DDA_algorithm|Nx[5]~corein              ; combout          ;
 ; |DDA_algorithm|Nx[6]           ; |DDA_algorithm|Nx[6]~corein              ; combout          ;
@@ -430,7 +425,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II Simulator
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Tue Oct 31 16:29:50 2023
+    Info: Processing started: Tue Oct 31 16:45:29 2023
 Info: Command: quartus_sim --read_settings_files=on --write_settings_files=off DDA_algorithm -c DDA_algorithm
 Info: Using vector source file "E:/HK7/He_thong_dk_nhung/DDA_algorithm/DDA_algorithm.vwf"
 Info: Inverted registers were found during simulation
@@ -439,12 +434,12 @@ Info: Inverted registers were found during simulation
 Info: Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info: Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info: Simulation partitioned into 1 sub-simulations
-Info: Simulation coverage is      66.98 %
-Info: Number of transitions in simulation is 103414
+Info: Simulation coverage is      69.30 %
+Info: Number of transitions in simulation is 101019
 Info: Quartus II Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 160 megabytes
-    Info: Processing ended: Tue Oct 31 16:29:50 2023
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Tue Oct 31 16:45:30 2023
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 
